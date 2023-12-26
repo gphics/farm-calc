@@ -5,6 +5,7 @@ import CalcForm from './CalcForm'
 import ComputationInfo from './ComputationInfo'
 import resultCalc from './helper/resultCalc'
 import ResultInfo from './ResultInfo'
+import { useEffect } from 'react'
 
 const initialState = {
     seedName: {
@@ -83,16 +84,100 @@ function Calc() {
                 setShowResult(true)
                 setFinalResult(res)
             }
-
-
-
+        }
+        if (state.seedName.value === "maize") {
+            const res = resultCalc({
+                name: "rice",
+                seedInput: state.seedSize.value,
+                inputStandard: 20000,
+                outputStandard: 35000,
+                landSize: +state.landSize.value,
+                landPrice: +state.landPrice.value || 0,
+                fertilizerName: state.fertilizerName.value,
+                fertilizerSize: +state.fertilizerSize.value,
+                fertilizerPrice: +state.fertilizerPrice.value || 0,
+                seedPrice: +state.seedPrice.value || 0,
+            })
+            if (!res) {
+                alert("check through the inputed data once again")
+                return;
+            } else {
+                setShowResult(true)
+                setFinalResult(res)
+            }
+        }
+        if (state.seedName.value === "cowpea") {
+            const res = resultCalc({
+                name: "rice",
+                seedInput: state.seedSize.value,
+                inputStandard: 1500,
+                outputStandard: 7500,
+                landSize: +state.landSize.value,
+                landPrice: +state.landPrice.value || 0,
+                fertilizerName: state.fertilizerName.value,
+                fertilizerSize: +state.fertilizerSize.value,
+                fertilizerPrice: +state.fertilizerPrice.value || 0,
+                seedPrice: +state.seedPrice.value || 0,
+            })
+            if (!res) {
+                alert("check through the inputed data once again")
+                return;
+            } else {
+                setShowResult(true)
+                setFinalResult(res)
+            }
+        }
+        if (state.seedName.value === "sorghum") {
+            const res = resultCalc({
+                name: "rice",
+                seedInput: state.seedSize.value,
+                inputStandard: 3000,
+                outputStandard: 5000,
+                landSize: +state.landSize.value,
+                landPrice: +state.landPrice.value || 0,
+                fertilizerName: state.fertilizerName.value,
+                fertilizerSize: +state.fertilizerSize.value,
+                fertilizerPrice: +state.fertilizerPrice.value || 0,
+                seedPrice: +state.seedPrice.value || 0,
+            })
+            if (!res) {
+                alert("check through the inputed data once again")
+                return;
+            } else {
+                setShowResult(true)
+                setFinalResult(res)
+            }
+        }
+        if (state.seedName.value === "millet") {
+            const res = resultCalc({
+                name: "rice",
+                seedInput: state.seedSize.value,
+                inputStandard: 450,
+                outputStandard: 1200,
+                landSize: +state.landSize.value,
+                landPrice: +state.landPrice.value || 0,
+                fertilizerName: state.fertilizerName.value,
+                fertilizerSize: +state.fertilizerSize.value,
+                fertilizerPrice: +state.fertilizerPrice.value || 0,
+                seedPrice: +state.seedPrice.value || 0,
+            })
+            if (!res) {
+                alert("check through the inputed data once again")
+                return;
+            } else {
+                setShowResult(true)
+                setFinalResult(res)
+            }
         }
     }
     function computeBtnHandler(e) {
         setShowCompute((prev) => prev === true ? false : true)
     }
 
-
+    useEffect(() => {
+        console.log("king")
+        alert("Dear user, make sure you check the computation table before using the website. Thank you")
+    })
 
     return (
         <div className='calc-page'>
