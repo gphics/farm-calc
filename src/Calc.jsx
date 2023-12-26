@@ -177,7 +177,7 @@ function Calc() {
     useEffect(() => {
         console.log("king")
         alert("Dear user, make sure you check the computation table before using the website. Thank you")
-    })
+    },[])
 
     return (
         <div className='calc-page'>
